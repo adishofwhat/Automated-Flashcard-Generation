@@ -27,7 +27,7 @@ if not is_dash_app_running():
     time.sleep(5)  # Wait for a few seconds to allow the Dash app to start
 
 # Heading
-st.write("# Flash Card Generator")
+st.write("# Unlock Up Browser")
 
 # Description
 st.write("""
@@ -53,16 +53,18 @@ if file is not None:
 
         # Provide link to open the Dash app
     if is_dash_app_running():
-        st.write("[Open Flashcard App](http://127.0.0.1:8050)")
+        st.write("[Open Up](http://127.0.0.1:8050)")
     else:
         st.write("Dash app is not running. Please try again.")
     
     # Display the question-answer pairs
     st.write("## Generated Question-Answer pairs")
+    i=0
     for question, answer in questions_answers:
-        st.write(f"**Question:** {question}")
-        st.write(f"**Answer:** {answer}")
+        st.write(f"**Question:** {i} {question}")
+        st.write(f"**Answer:** {i} {answer}")
         st.write("---")
+        i+=1
 
     # Save the question-answer pairs to a file
     with open("q_a_pairs.txt", "w") as f:

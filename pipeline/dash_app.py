@@ -24,16 +24,17 @@ random.shuffle(q_a)
 
 # App layout
 app.layout = html.Div([
-        # Add the "ABCD" text in the top-left corner
-    html.Div("ABCD", style={
+    # Add the "UN-Lock Up Browser" text in the top-left corner with an ID for debugging
+    html.Div("UN-Lock Up Browser", id='unlockup-text', style={
         'position': 'absolute',
-        'top': '10px',
-        'left': '10px',
-        'fontSize': '24px',
+        'top': '10px',  # Adjust the top margin as needed
+        'left': '10px',  # Adjust the left margin as needed
+        'fontSize': '50px',
         'fontWeight': 'bold',
-        'color': 'black'
+        'color': 'black',
+        'zIndex': 999  # Ensure it's on top if there are any overlapping elements
     }),
-    html.H1("Flashcard App", style={'textAlign': 'center'}),
+    html.H1("Flashcards", style={'textAlign': 'center'}),
     html.Div(id='question-container', style={
         'fontSize': '20px', 
         'margin': '20px 0',
@@ -41,19 +42,19 @@ app.layout = html.Div([
         'padding': '10px',
         'borderRadius': '5px',
         'width': '500px', 
-        'height': '50px',  # Adjust height as needed
-        'textAlign': 'center',  # Horizontally center text
+        'height': '50px',
+        'textAlign': 'center',
         'marginLeft': 'auto',
         'marginRight': 'auto',
-        'display': 'flex',  # Use flexbox
-        'alignItems': 'center',  # Vertically center text
-        'justifyContent': 'center',  # Horizontally center text
+        'display': 'flex',
+        'alignItems': 'center',
+        'justifyContent': 'center',
     }), 
     html.Div(id='answer-container', style={
         'display': 'flex',
         'justifyContent': 'center',
         'color': 'green',
-        'margin-top': '10px',
+        'marginTop': '10px',
         'fontSize': '18px',
         'border': '2px solid #000',
         'padding': '10px',
@@ -63,7 +64,7 @@ app.layout = html.Div([
         'textAlign': 'center',
         'marginLeft': 'auto',
         'marginRight': 'auto',
-        'alignItems': 'center',  # Vertically center the text in answer box
+        'alignItems': 'center',
     }),
     html.Div([
         html.Button("Next", id='next-btn', n_clicks=0),

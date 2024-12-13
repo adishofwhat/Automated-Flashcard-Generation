@@ -1,4 +1,4 @@
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM 
 
 # Initialize the model and tokenizer
 
@@ -9,8 +9,12 @@ model_path = "potsawee/t5-large-generation-squad-QuestionAnswer"
 # model_path = "/content/finetuned_squad"
 
 # fine tuned model path - lora + pos 
+# model_path = "Squad/t5squad_ner-pos_finetuned_sciq_7"
+
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_path) 
+
+model = PeftModel.from_pretrained(model, model_path)
 
 def gen_qa(context, num_questions=5):
     """
@@ -44,20 +48,8 @@ def gen_qa(context, num_questions=5):
             question, answer = question_answer.split(tokenizer.sep_token)
             questions_answers.append((question, answer))
 
-return questions_answers
+    return questions_answers
 
-
-# model_assess file 
-# def generate_qa(context, model, tokenizer):
-#     inputs = tokenizer(context, return_tensors="pt")
-#     outputs = model.generate(**inputs, max_length=100, num_return_sequences=1, num_beams=4) # last 2 are extra, not in the above code- what are they doing 
-#     question_answer = tokenizer.decode(outputs[0], skip_special_tokens=False)
-#     question_answer = question_answer.replace(tokenizer.pad_token, "").replace(tokenizer.eos_token, "")
-#     question, answer = question_answer.split(tokenizer.sep_token)
-
-#     generated_qa = f"{question} {answer}"
-
-#     return generated_qa
 
 
 
