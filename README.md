@@ -1,6 +1,5 @@
 # Automated Flashcard Generation Using LoRA-Enhanced Transformer Models
 
-## Overview
 This repository contains a production-ready implementation of an automated flashcard generation system, designed to streamline study practices by converting academic notes into high-quality flashcards. By leveraging advanced transformer models like T5 (Text-to-Text Transfer Transformer), enhanced with Low-Rank Adaptation (LoRA), this solution is optimized for scalability, efficiency, and contextual accuracy.
 
 ## Key Features
@@ -40,7 +39,7 @@ This repository contains a production-ready implementation of an automated flash
 ### Installation
 - Clone the repository:
 ```
-git clone https://github.com/your-repo/automated-flashcards.git
+git clone https://github.com/your-repo/Automated-Flashcard-Generation.git
 cd automated-flashcards
 ```
 - Create a virtual environment and activate it:
