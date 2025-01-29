@@ -45,11 +45,11 @@ cd automated-flashcards
 - Create a virtual environment and activate it:
 ```
 python -m venv env
-source env/bin/activate  # On Windows: env\Scripts\activate
+source env/bin/activate  # On Windows: env/Scripts/activate
 ```
 - Run the application:
 ```
-streamlit run pipeline\app.py
+streamlit run pipeline/app.py
 ```
 
 ## Example Use Case
