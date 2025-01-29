@@ -66,6 +66,6 @@ streamlit run pipeline/app.py
 - BERTScore: 0.931
 
 ## Contributors
-Adish Golecha
-Sarvesh Kharche
-Sneh Bhandari
+- Adish Golecha (ag2384@scarletmail.rutgers.edu)
+- Sarvesh Kharche (sk2907@scarletmail.rutgers.edu)
+- Sneh Bhandari (sb2499@scarletmail.rutgers.edu)
