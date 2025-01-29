@@ -64,3 +64,8 @@ streamlit run pipeline/app.py
 ## Results
 - ROUGE-L: 0.733
 - BERTScore: 0.931
+
+## Contributors
+Adish Golecha
+Sarvesh Kharche
+Sneh Bhandari
